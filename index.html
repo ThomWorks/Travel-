@@ -14,9 +14,6 @@
             <img src="./img/travellogo.png" alt="Travel+" class="logo">
             <nav class="nav-links">
                 <a href="#caracteristicas" class="active">Características</a>
-                <a href="#la-app">La App</a>
-                <a href="#testimonios">Testimonios</a>
-                <a href="#plataforma">Plataforma</a>
             </nav>
             <button class="mobile-menu-btn">
                 <div class="burger-icon">
@@ -31,11 +28,207 @@
     <section class="hero">
         <div class="hero-content">
             <h1>Planifica tus viajes <br>con Travel+</h1>
-            <p>Explora destinos increíbles, organiza itinerarios perfectos y vive experiencias inolvidables con nuestra plataforma web de viajes.</p>
-            <div class="cta-buttons">
-                <a href="#plataforma" class="btn btn-primary">Comenzar Ahora</a>
-                <a href="#caracteristicas" class="btn btn-secondary">Conoce más</a>
+            <p>Travel + compara entre las distintas paginas de viajes y encuentra el mejor precio! </p>
+            <!-- Añadir después de la sección de hero-content -->
+<div class="search-container">
+    <div class="search-tab-container">
+        <button class="search-tab active" data-tab="flights">
+            <i class="fas fa-plane"></i> Vuelos
+        </button>
+        <button class="search-tab" data-tab="hotels">
+            <i class="fas fa-hotel"></i> Hoteles
+        </button>
+        <button class="search-tab" data-tab="packages">
+            <i class="fas fa-suitcase-rolling"></i> Paquetes
+        </button>
+    </div>
+    
+    <div class="search-form-container">
+        <!-- Formulario de Vuelos -->
+        <form class="search-form active" id="flights-form">
+            <div class="form-group">
+                <label for="flight-origin">Origen</label>
+                <div class="input-icon">
+                    <i class="fas fa-plane-departure"></i>
+                    <input type="text" id="flight-origin" placeholder="Ciudad de origen">
+                </div>
             </div>
+            <div class="form-group">
+                <label for="flight-destination">Destino</label>
+                <div class="input-icon">
+                    <i class="fas fa-plane-arrival"></i>
+                    <input type="text" id="flight-destination" placeholder="Ciudad de destino">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group half">
+                    <label for="flight-date-depart">Salida</label>
+                    <div class="input-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                        <input type="date" id="flight-date-depart">
+                    </div>
+                </div>
+                <div class="form-group half">
+                    <label for="flight-date-return">Regreso</label>
+                    <div class="input-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                        <input type="date" id="flight-date-return">
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group half">
+                    <label for="flight-passengers">Pasajeros</label>
+                    <div class="input-icon">
+                        <i class="fas fa-user-friends"></i>
+                        <select id="flight-passengers">
+                            <option value="1">1 Pasajero</option>
+                            <option value="2">2 Pasajeros</option>
+                            <option value="3">3 Pasajeros</option>
+                            <option value="4">4+ Pasajeros</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group half">
+                    <label for="flight-class">Clase</label>
+                    <div class="input-icon">
+                        <i class="fas fa-chair"></i>
+                        <select id="flight-class">
+                            <option value="economy">Económica</option>
+                            <option value="premium">Premium</option>
+                            <option value="business">Negocios</option>
+                            <option value="first">Primera</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="search-btn">
+                <i class="fas fa-search"></i> Buscar Vuelos
+            </button>
+        </form>
+        
+        <!-- Formulario de Hoteles -->
+        <form class="search-form" id="hotels-form">
+            <div class="form-group">
+                <label for="hotel-destination">Destino</label>
+                <div class="input-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <input type="text" id="hotel-destination" placeholder="Ciudad, región o punto de interés">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group half">
+                    <label for="hotel-check-in">Entrada</label>
+                    <div class="input-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                        <input type="date" id="hotel-check-in">
+                    </div>
+                </div>
+                <div class="form-group half">
+                    <label for="hotel-check-out">Salida</label>
+                    <div class="input-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                        <input type="date" id="hotel-check-out">
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group half">
+                    <label for="hotel-rooms">Habitaciones</label>
+                    <div class="input-icon">
+                        <i class="fas fa-door-open"></i>
+                        <select id="hotel-rooms">
+                            <option value="1">1 Habitación</option>
+                            <option value="2">2 Habitaciones</option>
+                            <option value="3">3 Habitaciones</option>
+                            <option value="4">4+ Habitaciones</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group half">
+                    <label for="hotel-guests">Huéspedes</label>
+                    <div class="input-icon">
+                        <i class="fas fa-user-friends"></i>
+                        <select id="hotel-guests">
+                            <option value="1">1 Adulto</option>
+                            <option value="2">2 Adultos</option>
+                            <option value="3">3 Adultos</option>
+                            <option value="4">4+ Adultos</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="search-btn">
+                <i class="fas fa-search"></i> Buscar Hoteles
+            </button>
+        </form>
+        
+        <!-- Formulario de Paquetes -->
+        <form class="search-form" id="packages-form">
+            <div class="form-row">
+                <div class="form-group half">
+                    <label for="package-origin">Origen</label>
+                    <div class="input-icon">
+                        <i class="fas fa-plane-departure"></i>
+                        <input type="text" id="package-origin" placeholder="Ciudad de origen">
+                    </div>
+                </div>
+                <div class="form-group half">
+                    <label for="package-destination">Destino</label>
+                    <div class="input-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <input type="text" id="package-destination" placeholder="Ciudad de destino">
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group half">
+                    <label for="package-date-depart">Salida</label>
+                    <div class="input-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                        <input type="date" id="package-date-depart">
+                    </div>
+                </div>
+                <div class="form-group half">
+                    <label for="package-date-return">Regreso</label>
+                    <div class="input-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                        <input type="date" id="package-date-return">
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group half">
+                    <label for="package-travelers">Viajeros</label>
+                    <div class="input-icon">
+                        <i class="fas fa-user-friends"></i>
+                        <select id="package-travelers">
+                            <option value="1">1 Viajero</option>
+                            <option value="2">2 Viajeros</option>
+                            <option value="3">3 Viajeros</option>
+                            <option value="4">4+ Viajeros</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group half">
+                    <label for="package-type">Tipo de paquete</label>
+                    <div class="input-icon">
+                        <i class="fas fa-tag"></i>
+                        <select id="package-type">
+                            <option value="flight-hotel">Vuelo + Hotel</option>
+                            <option value="flight-hotel-car">Vuelo + Hotel + Coche</option>
+                            <option value="all-inclusive">Todo incluido</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="search-btn">
+                <i class="fas fa-search"></i> Buscar Paquetes
+            </button>
+        </form>
+
+    </div>
+</div>
         </div>
     </section>
 
@@ -90,101 +283,6 @@
         </div>
     </section>
 
-    <section class="app-showcase" id="la-app">
-        <div class="showcase-container">
-            <div class="showcase-content">
-                <h2>Tu plataforma web completa</h2>
-                <p>Travel+ va contigo en cada paso de tu aventura. Desde la planificación hasta el regreso a casa, nuestra plataforma web está diseñada para hacer tu experiencia de viaje más fluida, personalizada y memorable.</p>
-                <p>Con una interfaz intuitiva y funcionalidades avanzadas, Travel+ te ayuda a descubrir el mundo a tu manera, sin complicaciones.</p>
-                <a href="#plataforma" class="btn btn-primary">Pruébalo ahora</a>
-            </div>
-            <div class="app-screens">
-                <img src="img/dashboard.png" alt="Travel+ Plataforma" class="app-screen">
-            </div>
-        </div>
-    </section>
-
-    <section class="testimonials" id="testimonios">
-        <div class="section-title">
-            <h2>Lo que dicen nuestros usuarios</h2>
-            <p>Miles de viajeros ya han transformado sus experiencias con Travel+.</p>
-        </div>
-        <div class="testimonials-slider">
-            <div class="testimonial-card active">
-                <div class="testimonial-content">
-                    "Travel+ ha cambiado completamente la forma en que viajo. La función de itinerarios inteligentes me ha ahorrado horas de planificación, y he descubierto lugares increíbles que nunca hubiera encontrado por mi cuenta."
-                </div>
-                <div class="testimonial-author">
-                    <img src="/api/placeholder/100/100" alt="Ana García" class="author-avatar">
-                    <div>
-                        <h4>Ana García</h4>
-                        <p>Mochilera experimentada</p>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-content">
-                    "Como viajero de negocios, valoro enormemente la organización que Travel+ aporta a mis desplazamientos. Tener todos mis documentos y reservas en un solo lugar me ha salvado de más de un problema."
-                </div>
-                <div class="testimonial-author">
-                    <img src="/api/placeholder/100/100" alt="Carlos Mendoza" class="author-avatar">
-                    <div>
-                        <h4>Carlos Mendoza</h4>
-                        <p>Ejecutivo internacional</p>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-content">
-                    "Viajar en familia nunca había sido tan sencillo. La plataforma nos ayuda a encontrar actividades que gustan a todos, y los recursos multilingües han sido imprescindibles en nuestros viajes por Asia. ¡No puedo imaginar viajar sin Travel+ ahora!"
-                </div>
-                <div class="testimonial-author">
-                    <img src="/api/placeholder/100/100" alt="Elena y Pedro" class="author-avatar">
-                    <div>
-                        <h4>Elena y Pedro</h4>
-                        <p>Familia viajera</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="slider-controls">
-            <div class="slider-dot active" data-index="0"></div>
-            <div class="slider-dot" data-index="1"></div>
-            <div class="slider-dot" data-index="2"></div>
-        </div>
-    </section>
-
-    <section class="platform-info" id="plataforma">
-        <div class="platform-container">
-            <h2>Accede a Travel+ desde cualquier dispositivo</h2>
-            <p>Nuestra plataforma web está optimizada para brindarte la mejor experiencia sin importar dónde estés. Crea una cuenta gratuita y comienza a planificar tu próxima aventura.</p>
-            <a href="#" class="btn btn-primary">Crear Cuenta Gratis</a>
-            
-            <div class="platform-features">
-                <div class="platform-feature">
-                    <div class="platform-icon">
-                        <i class="fas fa-sync-alt"></i>
-                    </div>
-                    <h3>Sincronización en tiempo real</h3>
-                    <p>Accede a tus datos desde cualquier dispositivo, siempre actualizados.</p>
-                </div>
-                <div class="platform-feature">
-                    <div class="platform-icon">
-                        <i class="fas fa-lock"></i>
-                    </div>
-                    <h3>Datos seguros</h3>
-                    <p>Tu información de viaje está protegida con encriptación de última generación.</p>
-                </div>
-                <div class="platform-feature">
-                    <div class="platform-icon">
-                        <i class="fas fa-desktop"></i>
-                    </div>
-                    <h3>Experiencia multiplataforma</h3>
-                    <p>Funciona perfectamente en ordenadores, tablets y smartphones.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <footer>
         <div class="footer-container">
